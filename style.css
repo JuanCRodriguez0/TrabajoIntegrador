@@ -39,7 +39,29 @@ body {
     font-style: normal;
 }
 
-.Titulo h1{
+.titulo h1{
     text-align: center;
     font-family: 'LaLetraDeDios';
+}
+
+.tituloQuienesSomos h1{
+    text-align: center;
+    font-family: 'LaLetraDeDios';
+}
+
+.textoQuienesSomos{
+    background-color: #3c9be9;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    padding: 20px 40px;
+    margin: 50px auto;
+    color: white;
+    font-family: 'Courier New';
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+body{
+    text-align: center;
 }
