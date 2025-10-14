@@ -39,17 +39,17 @@ body {
     font-style: normal;
 }
 
-.titulo h1{
+.titulo h1 {
     text-align: center;
     font-family: 'LaLetraDeDios';
 }
 
-.tituloQuienesSomos h1{
+.tituloQuienesSomos h1 {
     text-align: center;
     font-family: 'LaLetraDeDios';
 }
 
-.textoQuienesSomos{
+.textoQuienesSomos {
     background-color: #3c9be9;
     border-radius: 10px;
     display: inline-block;
@@ -62,6 +62,23 @@ body {
     line-height: 1.6;
 }
 
-body{
+body {
     text-align: center;
+}
+
+.formulario {
+    border: 0.5px solid #3c9be9;
+    width: 250px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.divForms {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+input,textarea{
+    border: 0px;
 }
