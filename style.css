@@ -23,13 +23,20 @@
 }
 
 .menu {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-variant: small-caps;
+    text-shadow: 
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    /* todo esto lo agregué yo (Facu xd) y está sujeto a cambios,
+    solo me pareció que se veía un poco más lindo así. */
     position: fixed;
     top: 0;
     width: 100%;
-}
-
-body {
-    margin-top: 60px;
+    border: solid 2px white;
+    border-top: none;
 }
 
 @font-face {
@@ -63,14 +70,23 @@ body {
 }
 
 body {
+    margin-top: 60px;
     text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3N4ZnJmcWN3dHp3eWdvY3g4dDhhZDRpMTE5YTVpN2lhemZqdmQ5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dBCWoIHo1hT5Sdtqbn/giphy.gif);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    height: 110vh;
 }
 
 .formulario {
-    border: 0.5px solid #3c9be9;
+    background-color: #1f87db;
+    mix-blend-mode: screen;
+    border: 2px solid white;
     width: 250px;
     padding: 20px;
     border-radius: 5px;
+    text-align: left;
 }
 
 .divForms {
@@ -79,6 +95,22 @@ body {
     justify-content: center;
 }
 
-input,textarea{
-    border: 0px;
+input, textarea {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    display:block;
+
+}
+
+label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-variant: small-caps;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    
 }
