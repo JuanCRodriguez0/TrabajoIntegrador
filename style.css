@@ -18,7 +18,6 @@
 }
 
 .menu {
-    
     background-color: rgb(60, 155, 233, 0.95);
     padding: 10px 0;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -28,16 +27,20 @@
         1px -1px 0 black,
         -1px 1px 0 black,
         1px 1px 0 black;
-    /* esto está sujeto a cambios,
-    solo me pareció que se veía un poco más lindo así (by Facu, 1er commit) */
+    /* esto está sujeto a cambios, solo me pareció que se veía
+    un poco más lindo así (by Facu) */
     position: fixed;
-    top: 0;
+    top: 0; /* esto hace referencia a la posición superior del elemento
+    en referencia a su contexto, por eso es que al darle el valor de 0
+    el menú se coloca lo más arriba de la página posible */
     width: 100%;
     border: solid 2px white;
     border-top: none;
     border-right: none;
     border-left: none;
-    z-index: 100;
+    z-index: 100; /* esto coloca al menú en este caso en una capa superior
+    logrando que el resto de los elementos se "escondan" por detrás de él
+    cuando se scrollea hacia abajo */
 }
 
 @font-face {
@@ -47,28 +50,24 @@
     font-style: normal;
 }
 
-.titulo h1 {
+.tituloQuienesSomos {
     text-align: center;
     font-family: 'LaLetraDeDios';
-}
-
-.tituloQuienesSomos h1 {
-    text-align: center;
-    font-family: 'LaLetraDeDios';
+    color: white;
 }
 
 .textoQuienesSomos {
-    background-color: rgb(60, 155, 233);
+    background-color: rgb(60, 155, 233, 0.75);
     border-radius: 10px;
+    border: 2px solid white;
     display: inline-block;
     text-align: center;
-    padding: 20px 40px;
-    margin: 50px auto;
+    padding: 20px;
+    margin: 50px auto -20px auto;
     color: white;
     font-family: 'Courier New';
     font-size: 24px;
-    line-height: 1.6;
-    mix-blend-mode: screen;
+    line-height: 1.2;
 }
 
 body {
@@ -76,7 +75,8 @@ body {
     que se generaba en el lado izquierdo del menú superior */
     margin-top: 60px;
     text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3N4ZnJmcWN3dHp3eWdvY3g4dDhhZDRpMTE5YTVpN2lhemZqdmQ5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dBCWoIHo1hT5Sdtqbn/giphy.gif);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3N4ZnJmcWN3dHp3eWdvY3g4dDhhZDRpMTE5YTVpN2lhemZqdmQ5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dBCWoIHo1hT5Sdtqbn/giphy.gif);
     background-size: cover;
     background-repeat: repeat;
     background-position: center;
@@ -137,7 +137,7 @@ label {
 
 .botonEnviar {
     display: block;
-    margin: 20px auto 0 auto;
+    margin: 11px auto 0 auto; /* el orden acá es arriba -> derecha -> abajo -> izquierda */
     background-color: #1c5d93;
     color: white;
     border: 2px solid white;
@@ -174,6 +174,7 @@ label {
         1px 1px 0 black;
     color: white;
     opacity: 0.4;
+    bottom: 0;
 }
 
 .bannerFinal hr {
