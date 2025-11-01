@@ -16,22 +16,32 @@
         </ul>
     </div>
 
-    <div class="titulo">
+    <div class="titulo2">
         <h1><br>Completá el formulario</h1>
     </div>
 
     <div class="divForms">
-        <form class="formulario">
-            <label for="nombre">Nombre y apellido:</label><br>
-            <input type="text" name="nombre" required><br><br>
+        <form class="formulario" id="form" novalidate>
+            <label for="nombre" id="labelForm">Nombre:</label><br>
+            <input type="text" name="nombre" id="nombre1"><br><br>
+            <label for="msjAlerta" id="msjAlerta"></label>
 
-            <label for="mail">Mail:</label><br>
-            <input type="email" name="mail" required><br><br>
+            <label for="apellido" id="labelForm">Apellido:</label><br>
+            <input type="text" name="apellido" id="apellido"><br><br>
+            <label for="msjAlerta" id="msjAlerta"></label>
 
-            <label for="comentario">Comentario / consulta:</label><br>
+            <label for="mail" id="labelForm">Mail:</label><br>
+            <input type="email" name="mail" id="mail"><br><br>
+            <label for="msjAlerta" id="msjAlerta"></label>
+
+            <label for="telefono" id="labelForm">Teléfono:</label><br>
+            <input type="text" name="telefono" id="telefono"><br><br>
+            <label for="msjAlerta" id="msjAlerta"></label>
+
+            <label for="comentario" id="labelForm">Comentario / consulta:</label><br>
             <textarea id="textoDeArea" name="comentario"></textarea><br>
 
-            <button type="submit" class="botonEnviar">Enviar</button>
+            <button type="submit" class="botonEnviar" id="botonardo">Enviar</button>
         </form>
     </div>
 
@@ -41,5 +51,7 @@
             © 2025 - <b>Juan Cruz Rodriguez</b> y <b>Facundo Lopez Cozzella</b>
         </p>
     </div>
+
+    <script src="formulario.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
         "Imagenes/Maradona5.jpg",
         "Imagenes/Maradona6.jpg",
         "Imagenes/Maradona7.jpg",
-        "Imagenes/Maradona8.webp",
+        "Imagenes/Maradona8.jpg",
     ];
 
     // este va a ser el número que va a representar las posiciones de la matriz con las imágenes
