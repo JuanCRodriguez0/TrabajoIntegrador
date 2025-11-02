@@ -1,58 +1,107 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const form = document.getElementById("form");
+    const botonReset = document.getElementById("botonReset");
 
-    const nombre = document.getElementById("nombre1");
+    const nombre = document.getElementById("nombre");
     const apellido = document.getElementById("apellido");
     const mail = document.getElementById("mail");
     const tel = document.getElementById("telefono");
-    const comment = document.getElementById("textoDeArea");
 
-    const msj = document.getElementById("msjAlerta");
-    const boton = document.getElementById("botonardo");
+    const msjAlertaNombre = document.getElementById("msjAlertaNombre");
+    const msjAlertaApellido = document.getElementById("msjAlertaApellido");
+    const msjAlertaMail = document.getElementById("msjAlertaMail");
+    const msjAlertaTel = document.getElementById("msjAlertaTel");
+    const msjExito = document.getElementById("msjExito");
 
-    const validacionNyA = /^[A-Z][a-z]+\s{1,*}$/;
-    const validacionMail = / /;
-    const validacionTel = / /;
+    const validacionNyA = /^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+$/;
+    const validacionMail = /^[A-Za-z0-9_.-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}$/;
+    const validacionTel = /^\+?[\d\s]{6,15}$/;
 
     form.addEventListener("submit", function(event) {
+
         event.preventDefault();
+
+        let esNombreValido = validarNombre();
+        let esApellidoValido = validarApellido();
+        let esMailValido = validarMail();
+        let esTelValido = validarTel();
+
+        if (esNombreValido && esApellidoValido && esMailValido && esTelValido) {
+
+            msjExito.style.display = "block";
+
+            setTimeout(() => {
+                botonReset.click();
+            }, 5000);
+        }
+
+    });
+
+    botonReset.addEventListener("click", function(event) {
+
+        msjExito.style.display = "none";
+
     });
 
     function validarNombre() {
-        if (nombre.value == "" || validacionNyA.test(nombre)) {
-            msj.textContent = "Este campo es obligatorio!";
+
+        if (nombre.value === "") {
+            msjAlertaNombre.innerHTML = "Este campo es obligatorio!<br>";
+            return false;
+        } else if (!validacionNyA.test(nombre.value)) {
+            msjAlertaNombre.innerHTML = "El formato del nombre no es válido.<br>";
+            return false;
         } else {
-            msj.textContent = "";
+            msjAlertaNombre.innerHTML = "";
+            return true;
         }
+
     }
 
     function validarApellido() {
-        if (apellido.value == "" || validacionNyA.test(apellido)) {
-            msj.textContent = "Este campo es obligatorio!";
+
+        if (apellido.value === "") {
+            msjAlertaApellido.innerHTML = "Este campo es obligatorio!<br>";
+            return false;
+        } else if (!validacionNyA.test(apellido.value)) {
+            msjAlertaApellido.innerHTML = "El formato del apellido no es válido.<br>";
+            return false;
         } else {
-            msj.textContent = "";
+            msjAlertaApellido.innerHTML = "";
+            return true;
         }
+
     }
 
     function validarMail() {
-        if (mail.value == "" || validacionNyA.test(mail)) {
-            msj.textContent = "Este campo es obligatorio!";
+
+        if (mail.value === "") {
+            msjAlertaMail.innerHTML = "Este campo es obligatorio!<br>";
+            return false;
+        } else if (!validacionMail.test(mail.value)) {
+            msjAlertaMail.innerHTML = "El formato del mail no es válido.<br>";
+            return false;
         } else {
-            msj.textContent = "";
-        }    
+            msjAlertaMail.innerHTML = "";
+            return true;
+        }
+
     }
     
     function validarTel() {
-        if (tel.value == "" || validacionNyA.test(tel)) {
-            msj.textContent = "Este campo es obligatorio!";
+
+        if (tel.value === "") {
+            msjAlertaTel.innerHTML = "Este campo es obligatorio!<br>";
+            return false;
+        } else if (!validacionTel.test(tel.value)){
+            msjAlertaTel.innerHTML = "El formato del número telefónico no es válido.<br>";
+            return false;
         } else {
-            msj.textContent = "";
+            msjAlertaTel.innerHTML = "";
+            return true;
         }
+
     }
 
-    boton.addEventListener("click", validarNombre);
-    boton.addEventListener("click", validarApellido);
-    boton.addEventListener("click", validarMail);
-    boton.addEventListener("click", validarTel);
 });
