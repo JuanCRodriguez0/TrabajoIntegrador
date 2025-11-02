@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const validacionMail = /^[A-Za-z0-9_.-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}$/;
     const validacionTel = /^\+?[\d\s]{6,15}$/;
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function(event){
 
         event.preventDefault();
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             msjExito.style.display = "block";
 
-            setTimeout(() => {
+            setTimeout(() =>{
                 botonReset.click();
             }, 5000);
         }
@@ -39,20 +39,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     botonReset.addEventListener("click", function(event) {
-
         msjExito.style.display = "none";
-
     });
 
     function validarNombre() {
 
-        if (nombre.value === "") {
+        if(nombre.value === ""){
             msjAlertaNombre.innerHTML = "Este campo es obligatorio!<br>";
             return false;
-        } else if (!validacionNyA.test(nombre.value)) {
+        }else if(!validacionNyA.test(nombre.value)){
             msjAlertaNombre.innerHTML = "El formato del nombre no es válido.<br>";
             return false;
-        } else {
+        }else{
             msjAlertaNombre.innerHTML = "";
             return true;
         }
@@ -61,13 +59,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function validarApellido() {
 
-        if (apellido.value === "") {
+        if(apellido.value === ""){
             msjAlertaApellido.innerHTML = "Este campo es obligatorio!<br>";
             return false;
-        } else if (!validacionNyA.test(apellido.value)) {
+        }else if(!validacionNyA.test(apellido.value)) {
             msjAlertaApellido.innerHTML = "El formato del apellido no es válido.<br>";
             return false;
-        } else {
+        }else{
             msjAlertaApellido.innerHTML = "";
             return true;
         }
