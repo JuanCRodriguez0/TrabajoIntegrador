@@ -60,6 +60,7 @@
 
 .textoQuienesSomos {
     background-color: rgb(60, 155, 233, 0.75);
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, 0.5);
     border-radius: 10px;
     border: 2px solid white;
     display: inline-block;
@@ -85,7 +86,7 @@ body {
 }
 
 .formulario {
-    background-color: rgba(60, 155, 233);
+    background-color: rgba(60, 155, 233, 0.75);
     border: 2px solid rgb(255, 255, 255);
     width: 250px;
     padding: 20px;
@@ -96,8 +97,9 @@ body {
 
 .divForms {
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    justify-content: center;
+    align-items: center;
     padding-top: 38px;
     margin-bottom: -45px;
 }
@@ -109,7 +111,7 @@ input, textarea {
     width: 100%;
     box-sizing: border-box; /* esto es para que los elementos no se
     desborden de, en este caso, el formulario / especifíca el comportamiento
-    de las propiedads "width" (anchura) y "height" (altura) */
+    de las propiedades "width" (anchura) y "height" (altura) */
     display: block;
     color: white;
     margin-bottom: -10px;
@@ -141,13 +143,12 @@ textarea {
 
 .botonForm {
     display: block;
-    margin: 11px auto 0 auto; /* el orden acá es arriba -> derecha -> abajo -> izquierda */
+    margin: 11px auto 0 auto;
     background-color: #1c5d93;
     color: white;
     border: 2px solid white;
     padding: 5px 15px;
-    cursor: pointer; /* hace que al pasar el mouse por encima aparezca
-    la mano con el dedo índice arriba, detalle boludo xd */
+    cursor: pointer;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-variant: small-caps;
     font-size: 18px;
@@ -156,7 +157,6 @@ textarea {
         1px -1px 0 black,
         -1px 1px 0 black,
         1px 1px 0 black;
-    
 }
 
 .botonForm:hover {
@@ -210,7 +210,7 @@ textarea {
     background-color: rgba(60, 155, 233, 0.75);
     border-radius: 10px;
     padding: 3px;
-    box-shadow: 0px 0px 10px white;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, 0.5);
 }
 
 #carruselImg {
@@ -224,7 +224,7 @@ textarea {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgb(28, 93, 147, 0.25);
+    background-color: rgb(60, 155, 233, 0.75);
     color: white;
     border: 2px solid rgb(255, 255, 255, 0.4);
     font-size: 20px;
@@ -232,14 +232,15 @@ textarea {
     border-radius: 10%;
     cursor: pointer;
     z-index: 10;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, 0.5);
 }
 
 #carruselBotonAnterior {
-    left: 37px;
+    left: -63px;
 }
 
 #carruselBotonSiguiente {
-    right: 37px;
+    right: -63px;
 }
 
 #letrasMayus {
@@ -256,20 +257,48 @@ textarea {
     text-align: right;
     color: rgb(255, 50, 50);
     text-shadow:
-        1px 1px 1px rgba(255, 175, 175, 0.5),
-        -1px -1px 1px rgb(255, 175, 175, 0.5);
+        -1px -1px 1px rgb(255, 180, 180);
 }
 
 .msjExito {
     display: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: white;
+    background-color: rgba(60, 155, 233, 0.75);
+    border: 2px solid rgb(255, 255, 255);
+    width: 250px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, 0.5);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-variant: small-caps;
+    font-size: 22px;
+    color: rgb(169, 239, 152);
+    text-shadow: 
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.exitoTitulo {
+    display: block;
     text-align: center;
-    text-shadow:
-        1px 1px 1.5px rgb(255, 255, 255, 0.5),
-        -1px -1px 1.5px rgb(255, 255, 255, 0.5);
+}
+
+.inputsExito {
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-shadow: none;
+    font-variant: normal;
+    font-size: 14px;
+    border: none;
+    border-bottom: solid white 2px;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    text-align: left;
 }
 
 .divMerch {
@@ -283,7 +312,6 @@ textarea {
 }
 
 .merchItem {
-    
     background-color: rgba(59, 59, 59, 0.2);
     border: 1px solid rgb(255, 255, 255, 0.2);
     border-radius: 10px;
@@ -300,8 +328,8 @@ textarea {
     object-fit: contain;
 }
 
-.merchItem img:hover{
-    transform:scale(1.2);
+.merchItem img:hover {
+    transform: scale(1.2);
 }
 
 .merchInfo {
@@ -336,7 +364,7 @@ textarea {
 }
 
 
-.selecTalle{
+.selecTalle {
     color: white;
     background-color: #0d64ac;
     border-radius: 5px;
@@ -344,4 +372,10 @@ textarea {
     height: 32px;
     font-size: 13.5px;
     cursor: pointer;
+}
+
+.selecTalle:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(60, 155, 233);
+    color: rgba(60, 155, 233);
 }

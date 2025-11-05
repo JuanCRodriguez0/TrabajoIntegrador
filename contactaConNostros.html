@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Imagenes/DiegoFavicon.svg">
     <title>Maradona Merch - Contacto</title>
 </head>
+
 <body>
     <div class="menu">
         <ul>
@@ -32,23 +34,46 @@
             <input type="text" name="apellido" id="apellido" placeholder="Ej: Maradona"><br>
             <label class="msjAlerta" id="msjAlertaApellido"></label>
 
-            <label for="mail" id="labelForm">Mail:</label><br>
-            <input type="email" name="mail" id="mail" placeholder="Ej: marad10s@gmail.com.ar"><br>
-            <label class="msjAlerta" id="msjAlertaMail"></label>
+            <label for="mail" id="labelForm">Email:</label><br>
+            <input type="email" name="mail" id="email" placeholder="Ej: marad10s@gmail.com.ar"><br>
+            <label class="msjAlerta" id="msjAlertaEmail"></label>
 
             <label for="telefono" id="labelForm">Teléfono:</label><br>
-            <input type="text" name="telefono" id="telefono" placeholder="+54 9 11 123456 o +54911654321"><br>
+            <input type="text" name="telefono" id="telefono" placeholder="+54 9 11 123456 o +54911123456"><br>
             <label class="msjAlerta" id="msjAlertaTel"></label>
 
             <label for="comentario" id="labelForm">Comentario / consulta:</label><br>
-            <textarea id="textoDeArea" name="comentario" placeholder="Tu comentario/consulta/queja aquí."></textarea><br>
-            <label class="msjExito" id="msjExito">Formulario enviado con éxito!</label>
-            
+            <textarea id="textoDeArea" name="comentario"
+                placeholder="Tu comentario/consulta/queja aquí."></textarea><br>
+            <label class="msjAlerta" id="msjAlertaTextArea"></label>
+
             <div class="divBotones">
                 <button type="submit" class="botonForm">Enviar</button>
                 <button type="reset" class="botonForm" id="botonReset">Limpiar</button>
             </div>
         </form>
+
+        <p class="msjExito" id="msjExito">
+            <span class="exitoTitulo">¡Formulario enviado con éxito!</span><br>
+
+            <span id="labelForm">Nombre ingresado:</span><br>
+            <span class="inputsExito" id="nombreIngresado"></span><br>
+            
+            <span id="labelForm">Apellido ingresado:</span><br>
+            <span class="inputsExito" id="apellidoIngresado"></span><br>
+            
+            <span id="labelForm">Email ingresado:</span><br>
+            <span class="inputsExito" id="emailIngresado"></span><br>
+            
+            <span id="labelForm">Teléfono ingresado:</span><br>
+            <span class="inputsExito" id="telIngresado"></span><br>
+            
+            <span id="labelForm">Comentario ingresado:</span><br>
+            <span class="inputsExito" id="comentarioIngresado"></span>
+        </p>
+
+        </p>
+
     </div>
 
     <div class="bannerFinal">
@@ -60,4 +85,5 @@
 
     <script src="formulario.js"></script>
 </body>
+
 </html>
