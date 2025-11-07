@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const divForms = document.querySelector(".divForms");
     const form = document.getElementById("form");
     const botonReset = document.getElementById("botonReset");
 
@@ -8,12 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email");
     const tel = document.getElementById("telefono");
     const textArea = document.getElementById("textoDeArea");
-
-    const nombreIngresado = document.getElementById("nombreIngresado");
-    const apellidoIngresado = document.getElementById("apellidoIngresado");
-    const emailIngresado = document.getElementById("emailIngresado");
-    const telIngresado = document.getElementById("telIngresado");
-    const comentarioIngresado = document.getElementById("comentarioIngresado");
 
     const msjAlertaNombre = document.getElementById("msjAlertaNombre");
     const msjAlertaApellido = document.getElementById("msjAlertaApellido");
@@ -36,36 +31,30 @@ document.addEventListener("DOMContentLoaded", function () {
         let esTelValido = validarTel();
         let esTextAreaValido = validarTextArea();
 
+        const msjExitoViejo = document.getElementById("msjExito");
+
+        if (msjExitoViejo) {
+
+            msjExitoViejo.remove();
+
+        }
+
         if (esNombreValido && esApellidoValido && esEmailValido && esTelValido && esTextAreaValido) {
 
-            msjExito.style.display = "block";
-
-            nombreIngresado.textContent = nombre.value;
-            apellidoIngresado.textContent = apellido.value;
-            emailIngresado.textContent = email.value;
-            telIngresado.textContent = tel.value;
-            comentarioIngresado.textContent = textArea.value;
-
-            /* setTimeout(function() {
-                botonReset.click();
-            }, 3000);
-
-            así habría que hacer esto si quisiésemos que ande
-            y sin hacerlo de la otra forma que yo había hecho antes */
-
+            
         }
 
     });
 
     botonReset.addEventListener("click", function (event) {
 
-        msjExito.style.display = "none";
+        const msjExitoViejo = document.getElementById("msjExito");
 
-        nombreIngresado.textContent = "";
-        apellidoIngresado.textContent = "";
-        emailIngresado.textContent = "";
-        telIngresado.textContent = "";
-        comentarioIngresado.textContent = "";
+        if (msjExitoViejo) {
+
+            msjExitoViejo.remove();
+
+        }
 
     });
 
@@ -140,5 +129,122 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
+
+        /*  const pExito = document.createElement("p");
+            pExito.className = "msjExito";
+            pExito.id = "msjExito";
+            pExito.style.display = "block";
+
+            const spanTitulo = document.createElement("span");
+            spanTitulo.className = "exitoTitulo";
+            spanTitulo.textContent = "¡Formulario enviado con éxito!";
+            pExito.appendChild(spanTitulo);
+
+            pExito.appendChild(document.createElement("br")); // Primer salto de línea
+            
+            const labelNombre = document.createElement("span");
+            labelNombre.id = "labelForm";
+            labelNombre.textContent = "Nombre ingresado:";
+            pExito.appendChild(labelNombre);
+            
+            const valorNombre = document.createElement("span");
+            valorNombre.className = "inputsExito";
+            valorNombre.textContent = nombre.value;
+            pExito.appendChild(valorNombre);
+
+            // D. APELLIDO (Label + Br + Valor)
+            pExito.appendChild(document.createElement("br"));
+            
+            const labelApellido = document.createElement("span");
+            labelApellido.id = "labelForm";
+            labelApellido.textContent = "Apellido ingresado:";
+            pExito.appendChild(labelApellido);
+            pExito.appendChild(document.createElement("br"));
+            
+            const valorApellido = document.createElement("span");
+            valorApellido.className = "inputsExito";
+            valorApellido.textContent = apellido.value;
+            pExito.appendChild(valorApellido);
+
+            // E. EMAIL (Label + Br + Valor)
+            pExito.appendChild(document.createElement("br"));
+            
+            const labelEmail = document.createElement("span");
+            labelEmail.id = "labelForm";
+            labelEmail.textContent = "Email ingresado:";
+            pExito.appendChild(labelEmail);
+            pExito.appendChild(document.createElement("br"));
+            
+            const valorEmail = document.createElement("span");
+            valorEmail.className = "inputsExito";
+            valorEmail.textContent = email.value;
+            pExito.appendChild(valorEmail);
+
+            // F. TELÉFONO (Label + Br + Valor)
+            pExito.appendChild(document.createElement("br"));
+            
+            const labelTel = document.createElement("span");
+            labelTel.id = "labelForm";
+            labelTel.textContent = "Teléfono ingresado:";
+            pExito.appendChild(labelTel);
+            pExito.appendChild(document.createElement("br"));
+            
+            const valorTel = document.createElement("span");
+            valorTel.className = "inputsExito";
+            valorTel.textContent = tel.value;
+            pExito.appendChild(valorTel);
+
+            // G. COMENTARIO (Label + Br + Valor)
+            pExito.appendChild(document.createElement("br"));
+            
+            const labelComentario = document.createElement("span");
+            labelComentario.id = "labelForm";
+            labelComentario.textContent = "Comentario ingresado:";
+            pExito.appendChild(labelComentario);
+            pExito.appendChild(document.createElement("br"));
+            
+            const valorComentario = document.createElement("span");
+            valorComentario.className = "inputsExito";
+            valorComentario.textContent = textArea.value;
+            pExito.appendChild(valorComentario);
+            
+            // H. Inyectar el <p> completo al DOM
+            divForms.appendChild(pExito);
+            
+
+
+            Y acá te dejo la otra versión con la función por si decidís usarla:
+            
+
+
+            // 3. Creamos una función simple para no repetir código
+            function crearLineaDato(label, valor) {
+                // Label (Ej: "Nombre ingresado:")
+                const spanLabel = document.createElement("span");
+                spanLabel.id = "labelForm"; // Aplicamos tu estilo
+                spanLabel.textContent = label;
+                
+                // Dato (Ej: "Diego Armando")
+                const spanDato = document.createElement("span");
+                spanDato.className = "inputsExito"; // Aplicamos tu estilo
+                spanDato.textContent = valor;
+
+                // Agregamos todo al <p> padre
+                pExito.appendChild(document.createElement("br")); // <br>
+                pExito.appendChild(document.createElement("br")); // <br> (un espacio)
+                pExito.appendChild(spanLabel);
+                pExito.appendChild(document.createElement("br")); // <br>
+                pExito.appendChild(spanDato);
+            }
+
+            // 4. Usamos la función para crear todas las líneas
+            crearLineaDato("Nombre ingresado:", nombre.value);
+            crearLineaDato("Apellido ingresado:", apellido.value);
+            crearLineaDato("Email ingresado:", email.value);
+            crearLineaDato("Teléfono ingresado:", tel.value);
+            crearLineaDato("Comentario ingresado:", textArea.value);
+            
+            // 5. Agregamos el <p> (ya listo) al DOM
+            divForms.appendChild(pExito);  */
 
 });

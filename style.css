@@ -35,20 +35,14 @@
         1px -1px 0 black,
         -1px 1px 0 black,
         1px 1px 0 black;
-    /* esto está sujeto a cambios, solo me pareció que se veía
-    un poco más lindo así (by Facu) */
     position: fixed;
-    top: 0; /* esto hace referencia a la posición superior del elemento
-    en referencia a su contexto, por eso es que al darle el valor de 0
-    el menú se coloca lo más arriba de la página posible */
+    top: 0;
     width: 100%;
     border: solid 2px white;
     border-top: none;
     border-right: none;
     border-left: none;
-    z-index: 100; /* esto coloca al menú en este caso en una capa superior
-    logrando que el resto de los elementos se "escondan" por detrás de él
-    cuando se scrollea hacia abajo */
+    z-index: 100;
 }
 
 @font-face {
@@ -109,9 +103,7 @@ input, textarea {
     border-bottom: solid white 2px;
     background-color: transparent;
     width: 100%;
-    box-sizing: border-box; /* esto es para que los elementos no se
-    desborden de, en este caso, el formulario / especifíca el comportamiento
-    de las propiedades "width" (anchura) y "height" (altura) */
+    box-sizing: border-box;
     display: block;
     color: white;
     margin-bottom: -10px;
@@ -122,10 +114,7 @@ input, textarea {
 
 textarea {
     width: 100%;
-    resize: vertical; /* esta propiedad hace que el textarea solo se
-    pueda agrandar verticalmente y la agregué porque cuando uno intentaba
-    agrandarla hacia la derecha (única dirección en la que se podía agrandar)
-    este se salía más allá del límite del formulario, "bugeándose" je*/
+    resize: vertical;
     min-height: 150px;
 }
 
@@ -199,10 +188,7 @@ textarea {
     width: 60%;
     max-width: 450px;
     margin: 59px auto -50px auto;
-    position: relative; /* con esto le estamos diciendo al navegador que 
-    este elemento sea un punto de partida/la referencia para cualquier
-    elemento que tenga "position: absolute", que en este caso van a ser
-    los botones */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -303,8 +289,7 @@ textarea {
 
 .divMerch {
     margin: 50px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
     max-width: 1000px;
     flex-wrap: wrap;
     justify-content: center;
@@ -319,6 +304,7 @@ textarea {
     box-sizing: border-box;
     text-align: center;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    width: 300px;
 }
 
 .merchItem img {
