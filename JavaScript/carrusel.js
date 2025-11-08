@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const imagenes = [
-        "../Imagenes/Maradona1.JPG",
-        "../Imagenes/Maradona2.jpg",
-        "../Imagenes/Maradona3.jpg",
-        "../Imagenes/Maradona4.jpg",
-        "../Imagenes/Maradona5.jpg",
-        "../Imagenes/Maradona6.jpg",
-        "../Imagenes/Maradona7.jpg",
-        "../Imagenes/Maradona8.jpg",
+        "./Imagenes/Maradona1.JPG",
+        "./Imagenes/Maradona2.jpg",
+        "./Imagenes/Maradona3.jpg",
+        "./Imagenes/Maradona4.jpg",
+        "./Imagenes/Maradona5.jpg",
+        "./Imagenes/Maradona6.jpg",
+        "./Imagenes/Maradona7.jpg",
+        "./Imagenes/Maradona8.jpg",
     ];
 
     let indiceActual = 0;
